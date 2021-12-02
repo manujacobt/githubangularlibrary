@@ -1,0 +1,40 @@
+<div class='card'>
+    <div class='card-header'>
+     {{pageTitle}}
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf = 'books && books.length'>
+          <thead>
+            <tr>
+              <th>Books     </th>
+              <td><tr><th>Details</th></tr></td>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let book of books'>
+                  <td><img src = "{{booksservice.api}}/{{book.image}}"
+                    [title] = 'book.title'
+                    [style.width.px] = 'imageWidth' 
+                    [style.margin.px] = 'imageMargin'></td>
+                  <td> <div class="table" >
+                    <tr style="font-weight: bold; ">Title : {{ book.title }}</tr>
+                   </div>
+ 
+                     <div class="table">
+                     <tr style="font-weight: bold;">  Author: {{ book.author }}</tr>
+                   </div>
+                  <a href="books/{{book._id}}">Readmore</a></td>
+                  
+                  </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ 
+    
+    

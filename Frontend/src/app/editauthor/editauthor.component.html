@@ -1,0 +1,55 @@
+<div class='card'>
+    <form (ngSubmit)="editauthor()">
+  <div class='card-header'>
+  EDIT AUTHOR DETAILS
+  </div>
+  <div class='card-body'>            
+  <div class='table-responsive'>
+    <table class='table'>       
+    
+      <tbody>  
+          <tr>
+              <td> <label>Name</label></td>
+              <td><input type="text" name="p_id" [(ngModel)]="authorItem.name"/></td>                  
+            </tr>   
+            <tr>
+                <td><label>Place</label></td>
+                <td><input type="text" name="p_name" [(ngModel)]="authorItem.place"/></td>                  
+              </tr>  
+              <tr>
+                <td><label>Main</label></td>
+                <td><input type="text" name="p_code" [(ngModel)]="authorItem.main"/></td>                  
+              </tr>  
+              <tr>
+                <td><label>Works</label></td>
+                <td><input type="text" name="p_date" [(ngModel)]="authorItem.works"/></td>                  
+              </tr>  
+              <tr>
+                <td><label>Number</label></td>
+                <td><input type="text" name="p_desc" [(ngModel)]="authorItem.numb                  "/></td>                  
+              </tr>  
+              
+              <tr>
+                <td></td>
+                <td><input type="submit" value="Update Details" style="background-color: green;color: white;"/></td>                  
+              </tr> 
+              
+              <div >
+                <form (ngSubmit)="authorimage()">
+                  <tr>
+                    <td><label>Image</label></td>
+                    <td></td>
+                   
+                    <td><input type="file" (change)="createFormData($event)"/></td>                  
+                  <td></td>
+                  <td ><input type="submit" value="Udpate Image" style="background-color: green;color: white;"/></td>                  
+                </tr>
+                </form>
+              </div>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </form>
+  </div>
+  

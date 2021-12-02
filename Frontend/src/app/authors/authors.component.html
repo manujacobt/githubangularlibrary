@@ -1,0 +1,41 @@
+<div class='card'>
+    <div class='card-header'>
+     {{pageTitle}}
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf = 'authors && authors.length'>
+          <thead>
+            <tr>
+              <th>Authors     </th>
+              <td><tr><th>Details</th></tr></td>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let author of authors'>
+                  <td><img src = "{{authorservice.api}}/{{author.image}}"
+                    [title] = 'author.name'
+                    [style.width.px] = 'imageWidth' 
+                    [style.margin.px] = 'imageMargin'></td>
+                  <td>  <div class="table" >
+                    <tr style="font-weight: bold; ">Name : {{ author.name }}</tr>
+                   </div>
+ 
+                     <div class="table">
+                     <tr style="font-weight: bold; ">  Place : {{ author.place }}</tr>
+                   </div>
+                  <a href="authors/{{author._id}}">Readmore</a></td>
+                  
+                  </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ 
+    
+    
+

@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <marquee id="mark">Welcome to the Library management Application</marquee>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ 
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   
+    <ul class="navbar-nav navbar-right">
+      <a class="nav-link" routerLinkActive="active"  routerLink="/home"  >Home</a>
+      <a class="nav-link" style="cursor:pointer" routerLinkActive="active" *ngIf="!_auth.loggedIn()" routerLink="/login">Log In</a>
+      <a class="nav-link" style="cursor:pointer" routerLinkActive="active" *ngIf="_auth.loggedIn() &&_auth.role ==='admin'" routerLink="/addbook">Add Book</a>
+      <a class="nav-link" style="cursor:pointer" routerLinkActive="active" *ngIf="_auth.loggedIn()" routerLink="/books">Books</a>
+      <a class="nav-link" style="cursor:pointer" routerLinkActive="active" *ngIf="_auth.loggedIn()" routerLink="/authors">Authors</a>
+      <a class="nav-link" style="cursor:pointer" routerLinkActive="active" *ngIf="_auth.loggedIn() &&_auth.role ==='admin'" routerLink="/addauthor">Add Author</a>
+      <a class="nav-link" style="cursor:pointer" *ngIf="!_auth.loggedIn()"  routerLink="/signup">Sign Up</a>
+      <a class="nav-link" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="logoutUser()">Logout</a>
+    </ul>
+  </div>
+</nav>    
+
+
+  
+<div id="bg" class="container">
+  <router-outlet></router-outlet>           
+</div>
+<div>
+  <footer style="background-color: darkblue;color: white;text-align: center;">Copyright 2021</footer>
+</div>

@@ -1,0 +1,47 @@
+<div class='card'>
+    <form (ngSubmit)="Addauthor()">
+<div class='card-header'>
+ ADD NEW AUTHOR
+</div>
+<div class='card-body'>            
+  <div class='table-responsive'>
+    <table class='table'>       
+    
+      <tbody>  
+          <tr>
+              <td> <label>Name</label></td>
+              <td><input type="text" name="p_id" [(ngModel)]="authorItem.name"/></td>                  
+            </tr>   
+            <tr>
+                <td><label>Place</label></td>
+                <td><input type="text" name="p_name" [(ngModel)]="authorItem.place"/></td>                  
+              </tr>  
+              <tr>
+                <td><label>Main Works</label></td>
+                <td><input type="text" name="p_code" [(ngModel)]="authorItem.main"/></td>                  
+              </tr>  
+           
+              <tr>
+                <td><label>Works</label></td>
+                <td><input type="text" name="p_desc" [(ngModel)]="authorItem.works"/></td>                  
+              </tr>  
+              <tr>
+                <td> <label>Number Of Works</label></td>
+                <td><input type="text" name="p_price" [(ngModel)]="authorItem.numb"/></td>                  
+              </tr>  
+             
+              <tr>
+                <td><label>Image</label></td>
+                <td><input type="file" (change)="createFormData($event)"/></td>                  
+              </tr>  
+              <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>                  
+              </tr>             
+      </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>
+

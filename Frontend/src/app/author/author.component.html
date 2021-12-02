@@ -1,0 +1,63 @@
+<div class='card'>
+    <div class='card-header'>
+     {{pageTitle}}
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'>
+            
+          <thead>
+            <tr>
+              <th>Author     </th>
+              <td><tr><th>Details</th></tr></td>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr >
+                  <td><img src = "{{authorservice.api}}/{{author.image}}"
+                    [title] = 'author.name'
+                    [style.width.px] = 'imageWidth' 
+                    [style.margin.px] = 'imageMargin'></td>
+
+                    <div class="table" >
+                   <tr style="font-weight: bold; color: white;background-color: red;">Name : {{ author.name }}</tr>
+                  </div>
+
+                    <div class="table"style="color: red;">
+                    <tr style="font-weight: bold; background-color: green;color: white;">  Place : {{ author.place }}</tr>
+                  </div>
+                    <div class="table" style="font-weight: bold;">
+                     <tr>Main   : {{ author.main }}</tr>
+                   
+                      <tr>Works   :   {{ author.works }}</tr>
+                     
+                   
+                      <tr>Number Of works   :    {{ author.numb }}</tr>
+                     
+                     
+                      
+                    </div>
+                  
+                     <div class="table">
+                  <tr  ><a  href="/authors/{{author._id }}/editauthor" *ngIf="_auth.loggedIn() && _auth.role ==='admin'"><button  style="background-color:green;color:white;">EDIT </button></a></tr>      
+                  </div>
+                    <div class="card-body">
+                      <form action="/authors/{{author._id }}/deleteauthor" *ngIf="_auth.loggedIn() && _auth.role ==='admin'" (ngSubmit)="deleteauthor()">
+                  
+                        <button style="background-color: red;color:white;">DELETE</button>
+                      </form>
+                  </div>
+                    
+                  </tr>  
+                 
+              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ 
+    
+    
